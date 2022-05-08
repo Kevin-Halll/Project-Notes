@@ -1,0 +1,23 @@
+<section >
+    <form action="/project/add" method="post" onsubmit="alert('project added')" class="w-1/2 m-auto pt-20">
+        <div>
+            <input type="text" name="project_tittle" id="" class="border focus:outline-purple-300 p-2 m-1 w-full" required placeholder="Project Name">
+        </div> 
+        <div>
+            <textarea name="project_description" id="" cols="30" rows="10" class="border focus:outline-purple-300 p-2 m-1 w-full" placeholder="Project Description"></textarea>
+        </div>  
+        
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <input type="date" name="project_start_dt" id="" class="border focus:outline-purple-300 p-2 m-1 w-full" required>
+            </div>     
+            <div>
+                <input type="date" name="project_due_dt" id="" class="border focus:outline-purple-300 p-2 m-1 w-full" required>
+            </div>  
+        </div>
+
+        <button type="submit" class="rounded p-5 bg-purple-500 text-white">
+            Submit
+        </button>
+    </form>
+</section>

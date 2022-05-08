@@ -1,0 +1,15 @@
+<section class=" w-1/2 mt-11 m-auto">
+
+    <h1 class="text-3xl py-5"><%= tittle %> </h1>
+
+    <form action="/add-notes" method="post">
+        <input type="number" value="<%= project.project_id%>" name="project_id" id="" class="hidden">
+        <div>
+            <textarea name="notes" id="" cols="30" rows="6" class="border w-full p-5" placeholder="ADD NOTES"><%= project.notes %> </textarea>
+        </div>
+
+        <button class="rounded p-5 bg-purple-500 text-white">
+            Add Notes
+        </button>
+    </form>
+</section>

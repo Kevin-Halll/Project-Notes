@@ -1,0 +1,32 @@
+<section >
+    <h1 class="text-3xl text-center pt-10">
+        Edit Project
+    </h1>
+    <form action="/project/edit/<%= project.project_id %> " method="POST" onsubmit="alert('project Updated')" class="w-1/2 m-auto pt-20">
+        <div>
+            <input type="number" name="project_id" id="" class="border hidden focus:outline-purple-300 p-2 m-1 w-full" required value="<%= project.project_id%>">
+        </div> 
+        <div>
+            <input type="text" name="project_tittle" id="" class="border focus:outline-purple-300 p-2 m-1 w-full" required placeholder="Project Name" value="<%= project.project_tittle %> ">
+        </div> 
+        <div>
+            <textarea name="project_description" id="" cols="30" rows="10" class="border focus:outline-purple-300 p-2 m-1 w-full" placeholder="Project Description"><%= project.project_description %></textarea>
+        </div>  
+        
+        <div class="grid grid-cols-2 gap-4">
+            <div>
+                <input type="date" name="project_start_dt" id="" class="border focus:outline-purple-300 p-2 m-1 w-full" required value="<%= project.project_start_dt %> ">
+         
+            </div>  
+            <div>
+                <input type="date" name="project_due_dt" id="" class="border focus:outline-purple-300 p-2 m-1 w-full" required value="<%= project.project_due_dt %> ">
+                <!-- <%= project.project_due_dt %> -->
+            </div>     
+           
+        </div>
+
+        <button type="submit" class="rounded p-5 bg-purple-500 text-white">
+            Submit
+        </button>
+    </form>
+</section>

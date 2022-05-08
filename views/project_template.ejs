@@ -1,0 +1,57 @@
+<section class="heading mt-10 px-5 w-[80%] m-auto">
+
+  <div class="flex flex-row-reverse pr-5">
+    <a href="create-project" class="rounded bg-purple-600 text-white p-5">
+      Create Project
+    </a>
+  </div>
+  <br />
+  <div class="flex justify-center text-center">
+    <table class="border p-3">
+      <thead>
+        <th class="px-5 py-3 border">Project ID</th>
+        <th class="px-5 py-3 border">Project Name</th>
+        <th class="px-5 py-3 border">Project Description</th>
+        <th class="px-5 py-3 border">Start Date</th>
+        <th class="px-5 py-3 border">Due Date</th>
+        <th class="px-5 py-3 border">Actions</th>
+      </thead>
+
+      <tbody>
+        <% projects.forEach(function(project) { %>
+        <tr class="hover:shadow-md hover:shadow-purple-400">
+          <td class="px-5 py-3 border"><%= project.project_id %></td>
+          <td class="px-5 py-3 border"><%= project.project_tittle %></td>
+          <td class="px-5 py-3 border"><%= project.project_description %></td>
+          <td class="px-5 py-3 border">
+            <%= project.project_start_dt.toDateString().slice(3) %>
+          </td>
+          <td class="px-5 py-3 border">
+            <%= project.project_due_dt.toDateString().slice(3) %>
+          </td>
+          <td class="px-5 py-3 border flex justify-evenly gap-5 text-xl">
+
+            <div class="hover:text-purple-500" title="Edit Project">
+                <a href="/edit-project/<%= project.project_id %> ">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+              </div>
+
+            <div class="hover:text-purple-500" title="Add Project Notes" >
+              <a href="/project-notes/<%= project.project_id %> " >
+                <i class="fa-solid fa-note-sticky"></i>
+              </a>
+            </div>
+
+            <div class="hover:text-purple-500" title="Delete Project" onclick="alert('Deleted Successfully')">
+              <a href="/delete-project/<%= project.project_id %> ">
+                <i class="fa-solid fa-trash"></i>
+              </a>
+            </div>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -1,0 +1,41 @@
+
+<section class="heading mt-10 px-5 w-[80%] m-auto">
+
+    <!-- <div class="flex flex-row-reverse pr-5">
+        <a href="create-project" class="rounded bg-purple-600 text-white p-5">
+            Create Project 
+        </a>
+    </div> -->
+    <br>
+    <div class="flex justify-center text-center">
+    <table class="border p-3">
+      <thead>
+        <th class="px-5 py-3 border">Project ID</th>
+        <!-- <th class="px-5 py-3 border">Project Name</th> -->
+        <th class="px-5 py-3 border">Project Name</th>
+        <th class="px-5 py-3 border">Notes</th>
+        <th class="px-5 py-3 border">Date Status</th>
+        <th class="px-5 py-3 border">Actions</th>
+    </thead>
+    
+    <tbody>
+        <% notes.forEach(function(note) { %> 
+        <tr class="hover:shadow-md hover:shadow-purple-400">
+          <td class="px-5 py-3 border"> <%= note.project_id %> </td>
+          <td class="px-5 py-3 border"> <%= note.project_tittle %> </td>
+          <td class="px-5 py-3 border"> <%= note.notes %> </td>
+          <td class="px-5 py-3 border"> active or not </td>
+
+          <td class="px-5 py-3 border">
+           <div title="project notes">
+            <a href="" >
+                <i class="fa-solid fa-note-sticky" style="color: black;"></i>
+            </a>
+           </div>
+          </td>
+        </tr>
+        <% }) %> 
+      </tbody>
+    </table>
+  </div>
+</section>
